@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container my-5">
+        <h2 class="text-center my-3 text-primary">JavaScript Quiz</h2>
+        <div id="questionContainer" class="mx-5">
+            <!-- Question 1 -->
+            <div id="question1" class="mx-5 bg-secondary border border-white text-white">
+                <p style="font-weight: bold;">Q1: Inside which HTML element do we put the JavaScript?</p>
+                <div class="d-flex Question" style="cursor: pointer;">
+                    <input type="radio" onclick="removeDisbale()" name="question1" value="1">
+                    <h6 class="mx-2 mt-1 pe-auto">Script tag</h6>
+                </div>
+                <div class="d-flex Question" style="cursor: pointer;">
+                    <input type="radio" onclick="removeDisbale()"  name="question1" value="2">
+                    <h6 class="mx-2 mt-1">
+                        &lt;js&gt;
+                    </h6>
+                </div>
+                <div class="d-flex Question" style="cursor: pointer;">
+                    <input type="radio" onclick="removeDisbale()"  name="question1" value="3">
+                    <h6 class="mx-2 mt-1">
+                        &lt;Javascript&gt;
+                    </h6>
+                </div>
+                <div class="d-flex Question" style="cursor: pointer;">
+                    <input type="radio" onclick="removeDisbale()"  name="question1" value="4">
+                    <h6 class="mx-2 mt-1">
+                        &lt;scripting&gt;
+                    </h6>
+                </div>
+                <button disabled onclick="checkAnswer(1)" class="btn btn-primary right mt-3">Next</button>
+            </div>
+            <!-- Question 2 -->
+            <div id="question2" class="bg-secondary border border-white text-white"
+                style="display: none; cursor: pointer;">
+                <p>Q2:What is the correct JavaScript syntax to change the content of the HTML element below? <br>
+                    < p id="demo">This is a demonstration.</>
+                </p>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question2" value="1">
+                    <h6 class="mx-2 mt-1 ">document.getElementByid("demo").innerHTML="Hello world";</h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question2" value="2">
+                    <h6 class="mx-2 mt-1">document.getElementByName("p").innerHtml="Hello world"</h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question2" value="3">
+                    <h6 class="mx-2 mt-1">document.getElement("p").innerHtml="Hello world"</h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question2" value="4">
+                    <h6 class="mx-2 mt-1">#demo.innerHTML="Hello world"</h6>
+                </div>
+                <button disabled onclick="checkAnswer(2)" class="btn btn-primary right mt-3">Next2</button>
+            </div>
+
+            <!-- Question 3 -->
+            <div id="question3" class="bg-secondary border border-white text-white"
+                style="display: none; cursor: pointer;">
+                <p>Q3: Where is the correct place to insert a JavaScript?</p>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question3" value="1">
+                    <h6 class="mx-2 mt-1">Both the < head> and < body> section are correct
+                    </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question3" value="2">
+                    <h6 class="mx-2 mt-1">Head Section</h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question3" value="3">
+                    <h6 class="mx-2 mt-1">Body Section</h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question3" value="4">
+                    <h6 class="mx-2 mt-1">Out of < html>
+                    </h6>
+                </div>
+                <button disabled onclick="checkAnswer(3)" class="btn btn-primary right mt-3">Submit</button>
+            </div>
+            <!-- Question 4 -->
+            <div id="question4" class="bg-secondary border border-white text-white"
+                style="display: none; cursor: pointer;">
+                <p>Q4: What is the correct syntax for referring to an external script called "xxx.js"??</p>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question4" value="1">
+                    <h6 class="mx-2 mt-1"> script name="script.js"
+                    </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question4" value="2">
+                    <h6 class="mx-2 mt-1">script href="script.js</h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question4" value="3">
+                    <h6 class="mx-2 mt-1"> script src="script.js" </h6>
+                </div>
+                <button disabled onclick="checkAnswer(4)" class="btn btn-primary right mt-3">Submit</button>
+            </div>
+            <!-- Question 5 -->
+            <div id="question5" class="bg-secondary border border-white text-white"
+                style="display: none; cursor: pointer;">
+                <p>Q5 The external JavaScript file must contain the script tag.: </p>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question5" value="1">
+                    <h6 class="mx-2 mt-1"> True
+                    </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question5" value="2">
+                    <h6 class="mx-2 mt-1">False</h6>
+                </div>
+                <button disabled onclick="checkAnswer(5)" class="btn btn-primary right mt-3">Submit</button>
+            </div>
+            <!-- Question 6 -->
+            <div id="question6" class="bg-secondary border border-white text-white"
+                style="display: none; cursor: pointer;">
+                <p>Q6: How do you write "Hello World" in an alert box? </p>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question6" value="1">
+                    <h6 class="mx-2 mt-1"> msg("Hello world")
+                    </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question6" value="2">
+                    <h6 class="mx-2 mt-1">alert("Hello world")</h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question6" value="2">
+                    <h6 class="mx-2 mt-1">msgBox("Hello world")</h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question6" value="2">
+                    <h6 class="mx-2 mt-1">alertBox("Hello world")</h6>
+                </div>
+                <button disabled onclick="checkAnswer(6)" class="btn btn-primary right mt-3">Submit</button>
+            </div>
+            <!-- Question 7 -->
+            <div id="question7" class="bg-secondary border border-white text-white"
+                style="display: none; cursor: pointer;">
+                <p>Q7: How do you create a function in JavaScript? </p>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question7" value="1">
+                    <h6 class="mx-2 mt-1"> function: myfunction()
+                    </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question7" value="2">
+                    <h6 class="mx-2 mt-1"> function myfunction() </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question7" value="2">
+                    <h6 class="mx-2 mt-1"> function = myfunction() </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question7" value="2">
+                    <h6 class="mx-2 mt-1">none of These</h6>
+                </div>
+                <button disabled onclick="checkAnswer(7)" class="btn btn-primary right mt-3">Submit</button>
+            </div>
+
+            <!-- Question 8 -->
+            <div id="question8" class="bg-secondary border border-white text-white"
+                style="display: none; cursor: pointer;">
+                <p>Q8: How do you call a function named "myFunction"? </p>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question8" value="1">
+                    <h6 class="mx-2 mt-1"> call function myfunction()
+                    </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question8" value="2">
+                    <h6 class="mx-2 mt-1"> myfunction() </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question8" value="2">
+                    <h6 class="mx-2 mt-1"> call myfunction </h6>
+                </div>
+                <button disabled onclick="checkAnswer(8)" class="btn btn-primary right mt-3">Submit</button>
+            </div>
+            <!-- Question 9 -->
+            <div id="question9" class="bg-secondary border border-white text-white  my-3"
+                style="display: none;cursor: pointer;">
+                <p>Q9: How to write an IF statement in JavaScript? </p>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" checked name="question9" value="1">
+                    <h6 class="mx-2 mt-1">if (i===5)
+                    </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" disabled name="question9" value="2">
+                    <h6 class="mx-2 mt-1"> if i=5 then </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" disabled name="question9" value="3">
+                    <h6 class="mx-2 mt-1"> if 5=i </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" disabled name="question9" value="4">
+                    <h6 class="mx-2 mt-1"> if (5==i) </h6>
+                </div>
+                <button disabled onclick="checkAnswer(9)" class="btn btn-primary right mt-3">Submit</button>
+            </div>
+            <!-- Question 10 -->
+            <div id="question10" class="bg-secondary border border-white text-white"
+                style="display: none; cursor: pointer;">
+                <p>Q10 : How to write an IF statement for
+                    executing some code if "i" is NOT equal to 5? </p>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question10" value="1">
+                    <h6 class="mx-2 mt-1"> if <> 5
+                    </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question10" value="2">
+                    <h6 class="mx-2 mt-1"> (if <> 5) </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question10" value="3">
+                    <h6 class="mx-2 mt-1"> if i= !5 </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question10" value="4">
+                    <h6 class="mx-2 mt-1"> if (i !=5) </h6>
+                </div>
+                <button disabled onclick="checkAnswer(10)" class="btn btn-primary right mt-3">Submit</button>
+            </div>
+            <!-- Question  11 -->
+            <div id="question11" class="bg-secondary border border-white text-white"
+                style="display: none; cursor: pointer;">
+                <p>Q11 :How does a WHILE loop start?
+                </p>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question11" value="1">
+                    <h6 class="mx-2 mt-1">while(i<=10;i++) </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question11" value="2">
+                    <h6 class="mx-2 mt-1"> while(i=1 to 10) </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question11" value="3">
+                    <h6 class="mx-2 mt-1"> while(i <=10) </h6>
+                </div>
+                <button disabled onclick="checkAnswer(11)" class="btn btn-primary right mt-3">Submit</button>
+            </div>
+            <!-- Question 12 -->
+            <div id="question12" class="bg-secondary border border-white text-white"
+                style="display: none; cursor: pointer;">
+                <p>Q12 :How does a FOR loop start?
+                </p>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question12" value="1">
+                    <h6 class="mx-2 mt-1">for(i=0; i< 10 i++;) </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question12" value="2">
+                    <h6 class="mx-2 mt-1">for(i <=10; i++) </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question12" value="3">
+                    <h6 class="mx-2 mt-1">for(i=0; i <= 5) </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question12" value="4">
+                    <h6 class="mx-2 mt-1">for(i=0; i <= 5) </h6>
+                </div>
+                <button  disabled onclick="checkAnswer(12)" class="btn btn-primary right mt-3">Submit</button>
+            </div>
+            <!-- Question 13 -->
+            <div id="question13" class="bg-secondary border border-white text-white  my-3"
+                style="cursor: pointer;display: none;">
+                <p>Q13 :What is the correct way to write a JavaScript array?
+                </p>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()"  name="question13" value="1">
+                    <h6 class="mx-2 mt-1"> var color = (1:"red", 2: "green", 3:"blue") </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()"  name="question13" value="2">
+                    <h6 class="mx-2 mt-1"> var color = ["red", "green","blue"] </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()"  name="question13" value="3">
+                    <h6 class="mx-2 mt-1"> var color = "red", "green","blue" </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()"  name="question13" value="4">
+                    <h6 class="mx-2 mt-1">var color = {"red", "green","blue"}</h6>
+                </div>
+                <button disabled onclick="checkAnswer(13)" class="btn btn-primary right mt-3">Submit</button>
+            </div>
+            <!-- Question 14 -->
+            <div id="question14" class="bg-secondary border border-white text-white"
+                style="display: none; cursor: pointer;">
+                <p>Q14 :How can you add a comment in a JavaScript?
+                </p>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question14" value="1">
+                    <h6 class="mx-2 mt-1">
+                        < !-- This is comment-->
+                    </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question14" value="2">
+                    <h6 class="mx-2 mt-1">'This is comment' </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question14" value="3">
+                    <h6 class="mx-2 mt-1"> //This Comment </h6>
+                </div>
+                <button disabled onclick="checkAnswer(14)" class="btn btn-primary right mt-3">Submit</button>
+            </div>
+            <!-- Question 15 -->
+            <div id="question15" class="bg-secondary border border-white text-white"
+                style="display: none; cursor: pointer;">
+                <p>Q15 :How to insert a comment that has more than one line?
+                </p>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question15" value="1">
+                    <h6 class="mx-2 mt-1">
+                        < !-- This is comment-->
+                    </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question15" value="2">
+                    <h6 class="mx-2 mt-1">'This is comment' </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question15" value="3">
+                    <h6 class="mx-2 mt-1">//This is Commment</h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" onclick="removeDisbale()" name="question15" value="4">
+                    <h6 class="mx-2 mt-1">/*....*/</h6>
+                </div>
+                <button disabled onclick="showResult()" class="btn btn-primary right mt-3">Submit</button>
+            </div>
+        </div>
+        <div id="resultContainer" style="display: none;">
+            <h5 id="resultText" class="text-center"></h5>
+        </div>
+    </div>
+    <div class="container d-flex d-none" id="last">
+        <h4 class="text-center" id="refill" onclick="Formagain()">Refill the Quiz</h4>
+        <h4 class="text-center mx-5" id="ans" onclick="HandleCorrect()">Check The true Answer</h4>
+    </div>
+    <!-- Correct Answer -->
+    <div class="container my-5 d-none" id="container1">
+        <h4>correct Answer</h4>
+        <div id="questionContainer1" class="mx-5">
+            <!-- Question 1 -->
+            <div id="question1" class=" mx-5 bg-secondary border border-white text-white my-3">
+                <p style="font-weight: bold; ">Q1: Inside which HTML element do we put the JavaScript?</p>
+                <div class="d-flex Question" style="cursor: pointer;">
+                    <input type="radio"  style="cursor: pointer;" checked class="pe-auto" name="question1" value="1">
+                    <h6 class="mx-2 mt-1 pe-auto">Script tag</h6>
+                </div>
+                <div class="d-flex Question" style="cursor: pointer;">
+                    <input type="radio"  style="cursor: pointer;" disabled name="question1" value="2">
+                    <h6 class="mx-2 mt-1">
+                        < js>
+                    </h6>
+                </div>
+                <div class="d-flex Question" style="cursor: pointer;">
+                    <input type="radio"  style="cursor: pointer;" disabled name="question1" value="3">
+                    <h6 class="mx-2 mt-1">
+                        < Javascript>
+                    </h6>
+                </div>
+                <div class="d-flex Question" style="cursor: pointer;">
+                    <input type="radio"  style="cursor: pointer;" disabled name="question1" value="4">
+                    <h6 class="mx-2 mt-1">
+                        < scripting>
+                    </h6>
+                </div>
+            <!-- Question 2 -->
+            <div id="question2  my-5" class="bg-secondary border border-white text-white  my-3"
+                style="cursor: pointer;">
+                <p>Q2:What is the correct JavaScript syntax to change the content of the HTML element below? <br>
+                    < p id="demo">This is a demonstration.</>
+                </p>
+                <div class="d-flex Question">
+                    <input type="radio"  checked name="question2" value="1">
+                    <h6 class="mx-2 mt-1 ">document.getElementByid("demo").innerHTML="Hello world";</h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question2" value="2">
+                    <h6 class="mx-2 mt-1">document.getElementByName("p").innerHtml="Hello world"</h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" disabled name="question2" value="3">
+                    <h6 class="mx-2 mt-1">document.getElement("p").innerHtml="Hello world"</h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question2" value="4">
+                    <h6 class="mx-2 mt-1">#demo.innerHTML="Hello world"</h6>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div id="question3" class="bg-secondary border border-white text-white  my-3" style="cursor: pointer;">
+                <p>Q3: Where is the correct place to insert a JavaScript?</p>
+                <div class="d-flex Question">
+                    <input type="radio" checked name="question3" value="1">
+                    <h6 class="mx-2 mt-1">Both the < head> and < body> section are correct
+                    </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question3" value="2">
+                    <h6 class="mx-2 mt-1">Head Section</h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question3" value="3">
+                    <h6 class="mx-2 mt-1">Body Section</h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question3" value="4">
+                    <h6 class="mx-2 mt-1">Out of < html>
+                    </h6>
+                </div>
+            </div>
+            <!-- Question 4 -->
+            <div id="question4" class="bg-secondary border border-white text-white  my-3" style="cursor: pointer;">
+                <p>Q4: What is the correct syntax for referring to an external script called "xxx.js"??</p>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question4" value="1">
+                    <h6 class="mx-2 mt-1"> script name="script.js"
+                    </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question4" value="2">
+                    <h6 class="mx-2 mt-1">script href="script.js</h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  checked name="question4" value="3">
+                    <h6 class="mx-2 mt-1"> script src="script.js" </h6>
+                </div>
+            </div>
+            <!-- Question 5 -->
+            <div id="question5" class="bg-secondary border border-white text-white  my-3" style="cursor: pointer;">
+                <p>Q5 The external JavaScript file must contain the script tag.: </p>
+                <div class="d-flex Question">
+                    <input type="radio" disabled name="question5" value="1">
+                    <h6 class="mx-2 mt-1"> True
+                    </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  checked name="question5" value="2">
+                    <h6 class="mx-2 mt-1">False</h6>
+                </div>
+            </div>
+            <!-- Question 6 -->
+            <div id="question6" class="bg-secondary border border-white text-white  my-3" style="cursor: pointer;">
+                <p>Q6: How do you write "Hello World" in an alert box? </p>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question6" value="1">
+                    <h6 class="mx-2 mt-1"> msg("Hello world")
+                    </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  checked name="question6" value="2">
+                    <h6 class="mx-2 mt-1">alert("Hello world")</h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" disabled name="question6" value="2">
+                    <h6 class="mx-2 mt-1">msgBox("Hello world")</h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" disabled name="question6" value="2">
+                    <h6 class="mx-2 mt-1">alertBox("Hello world")</h6>
+                </div>
+            </div>
+            <!-- Question 7 -->
+            <div id="question7" class="bg-secondary border border-white text-white  my-3" style="cursor: pointer;">
+                <p>Q7: How do you create a function in JavaScript? </p>
+                <div class="d-flex Question">
+                    <input type="radio" disabled name="question7" value="1">
+                    <h6 class="mx-2 mt-1"> function: myfunction()
+                    </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  checked name="question7" value="2">
+                    <h6 class="mx-2 mt-1"> function myfunction() </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" disabled name="question7" value="2">
+                    <h6 class="mx-2 mt-1"> function = myfunction() </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question7" value="2">
+                    <h6 class="mx-2 mt-1">none of These</h6>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div id="question8" class="bg-secondary border border-white text-white  my-3" style="cursor: pointer;">
+                <p>Q8: How do you call a function named "myFunction"? </p>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question8" value="1">
+                    <h6 class="mx-2 mt-1"> call function myfunction()
+                    </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  checked name="question8" value="2">
+                    <h6 class="mx-2 mt-1"> myfunction() </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question8" value="2">
+                    <h6 class="mx-2 mt-1"> call myfunction </h6>
+                </div>
+            </div>
+            <!-- Question 9 -->
+            <div id="question9" class="bg-secondary border border-white text-white  my-3" style="cursor: pointer;">
+                <p>Q9: How to write an IF statement in JavaScript? </p>
+                <div class="d-flex Question">
+                    <input type="radio"  checked name="question9" value="1">
+                    <h6 class="mx-2 mt-1">if (i===5)
+                    </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question9" value="2">
+                    <h6 class="mx-2 mt-1"> if i=5 then </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" disabled name="question9" value="3">
+                    <h6 class="mx-2 mt-1"> if 5=i </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question9" value="4">
+                    <h6 class="mx-2 mt-1"> if (5==i) </h6>
+                </div>
+            </div>
+            <!-- Question 10 -->
+            <div id="question10" class="bg-secondary border border-white text-white  my-3" style="cursor: pointer;">
+                <p>Q10 : How to write an IF statement for
+                    executing some code if "i" is NOT equal to 5? </p>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question10" value="1">
+                    <h6 class="mx-2 mt-1"> if <> 5
+                    </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question10" value="2">
+                    <h6 class="mx-2 mt-1"> (if <> 5) </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question10" value="3">
+                    <h6 class="mx-2 mt-1"> if i= !5 </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  checked name="question10" value="4">
+                    <h6 class="mx-2 mt-1"> if (i !=5) </h6>
+                </div>
+            </div>
+            <!-- Question  11 -->
+            <div id="question11" class="bg-secondary border border-white text-white  my-3" style="cursor: pointer;">
+                <p>Q11 :How does a WHILE loop start?
+                </p>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question11" value="1">
+                    <h6 class="mx-2 mt-1">while(i<=10;i++) </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question11" value="2">
+                    <h6 class="mx-2 mt-1"> while(i=1 to 10) </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  checked name="question11" value="3">
+                    <h6 class="mx-2 mt-1"> while(i <=10) </h6>
+                </div>
+            </div>
+            <!-- Question 12 -->
+            <div id="question12" class="bg-secondary border border-white text-white  my-3" style="cursor: pointer;">
+                <p>Q12 :How does a FOR loop start?
+                </p>
+                <div class="d-flex Question">
+                    <input type="radio" checked="question12" value="1">
+                    <h6 class="mx-2 mt-1">for(i=0; i< 10 i++;) </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question12" value="2">
+                    <h6 class="mx-2 mt-1">for(i <=10; i++) </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" disabled name="question12" value="3">
+                    <h6 class="mx-2 mt-1">for(i=0; i <= 5) </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question12" value="4">
+                    <h6 class="mx-2 mt-1">for(i=0; i <= 5) </h6>
+                </div>
+            </div>
+            <!-- Question 13 -->
+            <div id="question13" class="bg-secondary border border-white text-white  my-3" style="cursor: pointer;">
+                <p>Q13 :What is the correct way to write a JavaScript array?
+
+
+                </p>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question13" value="1">
+                    <h6 class="mx-2 mt-1"> var color = (1:"red", 2: "green", 3:"blue") </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" checked name="question13" value="2">
+                    <h6 class="mx-2 mt-1"> var color = ["red", "green","blue"] </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio"  disabled name="question13" value="3">
+                    <h6 class="mx-2 mt-1"> var color = "red", "green","blue" </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" disabled name="question13" value="4">
+                    <h6 class="mx-2 mt-1">var color = {"red", "green","blue"}</h6>
+                </div>
+            </div>
+            <!-- Question 14 -->
+            <div id="question14" class="bg-secondary border border-white text-white  my-3" style="cursor: pointer;">
+                <p>Q14 : How can you add a comment in a JavaScript?
+                </p>
+                <div class="d-flex Question">
+                    <input type="radio" disabled name="question14" value="1">
+                    <h6 class="mx-2 mt-1">
+                        < !-- This is comment-->
+                    </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" disabled name="question14" value="2">
+                    <h6 class="mx-2 mt-1">'This is comment' </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" checked name="question14" value="3">
+                    <h6 class="mx-2 mt-1"> //This Comment </h6>
+                </div>
+                <button onclick="checkAnswer(14)" class="btn btn-primary right mt-3">Submit</button>
+            </div>
+            <!-- Question 15 -->
+            <div id="question14" class="bg-secondary border border-white text-white  my-3" style="cursor: pointer;">
+                <p>Q15 :How to insert a comment that has more than one line?
+                </p>
+                <div class="d-flex Question">
+                    <input type="radio" name="question13" value="1">
+                    <h6 class="mx-2 mt-1">
+                        < !-- This is comment-->
+                    </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" disabled name="question13" value="2">
+                    <h6 class="mx-2 mt-1">'This is comment' </h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" disabled name="question13" value="3">
+                    <h6 class="mx-2 mt-1">//This is Commment</h6>
+                </div>
+                <div class="d-flex Question">
+                    <input type="radio" checked name="question13" value="4">
+                    <h6 class="mx-2 mt-1">/*....*/</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

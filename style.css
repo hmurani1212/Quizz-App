@@ -1,0 +1,21 @@
+.Question:hover {
+    background-color: green;
+}
+
+#refill {
+    cursor: pointer;
+}
+
+#refill:hover {
+    color: blue;
+    text-decoration: underline;
+}
+#ans {
+    cursor: pointer;
+}
+
+#ans:hover {
+    color: blue;
+    text-decoration: underline;
+    ;
+}
